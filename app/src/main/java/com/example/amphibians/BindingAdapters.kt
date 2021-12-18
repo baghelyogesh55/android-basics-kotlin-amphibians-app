@@ -15,6 +15,7 @@
  */
 package com.example.amphibians
 
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
@@ -49,6 +50,7 @@ fun bindStatus(statusImageView: ImageView, status: AmphibianApiStatus?) {
             statusImageView.visibility = View.GONE
         }
         AmphibianApiStatus.ERROR -> {
+            Log.d("BindingAdapter", "bindStatus: Error")
             statusImageView.visibility = View.VISIBLE
             statusImageView.setImageResource(R.drawable.ic_connection_error)
         }
